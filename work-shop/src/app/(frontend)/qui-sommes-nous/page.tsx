@@ -1,19 +1,26 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faBullseye, faHeart, faLightbulb, faUsers } from '@fortawesome/free-solid-svg-icons'
+
 const values = [
   {
     title: 'Mission',
     text: 'Accompagner les centres de formation dans leur transformation digitale avec des solutions pedagogiques innovantes.',
+    icon: faBullseye,
   },
   {
     title: 'Passion',
     text: "Nous croyons en la puissance de l'education pour transformer les vies et les organisations.",
+    icon: faHeart,
   },
   {
     title: 'Innovation',
     text: 'Nous developpons continuellement de nouvelles approches pour repondre aux defis de la formation moderne.',
+    icon: faLightbulb,
   },
   {
     title: 'Proximite',
     text: "Nous construisons des relations durables avec nos partenaires basees sur l'ecoute et la confiance.",
+    icon: faUsers,
   },
 ]
 
@@ -24,14 +31,6 @@ const history = [
   { step: '4', year: '2020', title: 'Depassement des 3000h de contenus' },
   { step: '5', year: '2024', title: '+3500 utilisateurs actifs' },
 ]
-
-function IconPlaceholder() {
-  return (
-    <span className="inline-flex h-12 w-12 items-center justify-center rounded-full border border-indigo-200 bg-indigo-100 text-xs text-indigo-500">
-      O
-    </span>
-  )
-}
 
 export default function QuiSommesNousPage() {
   return (
@@ -62,8 +61,8 @@ export default function QuiSommesNousPage() {
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
             {values.map((value) => (
               <div key={value.title} className="space-y-4">
-                <div className="mx-auto">
-                  <IconPlaceholder />
+                <div className="mx-auto inline-flex h-12 w-12 items-center justify-center rounded-full border border-indigo-200 bg-indigo-100 text-indigo-600">
+                  <FontAwesomeIcon className="h-5 w-5" icon={value.icon} />
                 </div>
                 <h3 className="text-base font-semibold text-slate-900">{value.title}</h3>
                 <p className="text-sm text-slate-500">{value.text}</p>

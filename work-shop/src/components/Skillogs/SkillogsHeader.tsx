@@ -1,5 +1,6 @@
 'use client'
 
+import Image from 'next/image'
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
@@ -12,6 +13,7 @@ const navItems = [
   { label: 'Tarifs', href: '/tarifs' },
   { label: 'Ressources', href: '/ressources' },
   { label: 'Blog', href: '/blog' },
+  { label: 'Contact', href: '/contacts' },
 ]
 
 export function SkillogsHeader() {
@@ -38,10 +40,7 @@ export function SkillogsHeader() {
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between gap-6 px-6 py-4">
         <Link className="flex items-center gap-2 text-xl font-semibold tracking-wide text-slate-900" href="/">
-          <span className="inline-flex h-7 w-7 items-center justify-center rounded-full border border-slate-300 text-xs">
-            O
-          </span>
-          SKILLOGS
+          <Image src="/images/Logo_skillogs.png" alt="logo" width={140} height={32} />
         </Link>
         <nav className="hidden flex-nowrap items-center gap-5 text-sm text-slate-600 lg:flex">
           {navItems.map((item) => {
