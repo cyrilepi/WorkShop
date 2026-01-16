@@ -237,7 +237,7 @@ function IconCircle() {
 export default function HomePage() {
   return (
     <main className="bg-white text-slate-900">
-      <section className="relative overflow-hidden bg-white">
+      <section className="relative overflow-hidden bg-white reveal">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-20 lg:grid-cols-[1.2fr_1fr]">
           <div className="space-y-6">
             <span className="inline-flex rounded-full bg-indigo-100 px-4 py-2 text-xs font-semibold text-indigo-600">
@@ -252,18 +252,18 @@ export default function HomePage() {
               des etudes dans la structuration et le pilotage de leurs parcours de formation.
             </p>
             <div className="flex flex-wrap gap-3">
-              <button className="inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white">
+              <button className="hover-button inline-flex items-center gap-2 rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white">
                 Demander une demo
                 <FontAwesomeIcon className="h-3.5 w-3.5" icon={faArrowRight} />
               </button>
-              <button className="inline-flex items-center gap-2 rounded-full border border-indigo-600 px-4 py-2 text-sm font-semibold text-indigo-600">
+              <button className="hover-button inline-flex items-center gap-2 rounded-full border border-indigo-600 px-4 py-2 text-sm font-semibold text-indigo-600">
                 <FontAwesomeIcon className="h-3.5 w-3.5" icon={faPlay} />
                 Voir le temoignage
               </button>
             </div>
           </div>
           <div className="flex items-center">
-            <div className="relative w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-md">
+            <div className="hover-lift relative w-full rounded-2xl border border-slate-200 bg-white p-6 shadow-md">
               <div className="flex items-start gap-4">
                   <Image
                     className="rounded-2xl bg-[#b7ff63] p-2"
@@ -283,12 +283,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f9]">
+      <section className="bg-[#f7f7f9] reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16 text-center">
           <h2 className="text-lg font-semibold text-slate-900">Skillogs en quelques chiffres</h2>
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {stats.map((item) => (
-              <div key={item.label} className={`rounded-2xl p-6 ${item.tone}`}>
+              <div key={item.label} className={`hover-lift hover-tint rounded-2xl p-6 ${item.tone}`}>
                 <p className="text-2xl font-semibold">{item.value}</p>
                 <p className="mt-2 text-sm">{item.label}</p>
               </div>
@@ -297,7 +297,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-white">
+      <section className="relative bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
@@ -308,7 +308,7 @@ export default function HomePage() {
           <p className="mt-6 text-sm font-semibold text-slate-900">Notre approche pedagogique</p>
           <div className="mt-6 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {valueCards.map((card) => (
-              <div key={card.title} className={`rounded-2xl p-6 ${card.tone}`}>
+              <div key={card.title} className={`hover-lift hover-tint rounded-2xl p-6 ${card.tone}`}>
                 <FontAwesomeIcon className="h-5 w-5" icon={card.icon} />
                 <h3 className="mt-4 text-base font-semibold">{card.title}</h3>
                 <p className="mt-2 text-sm">{card.text}</p>
@@ -318,12 +318,12 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-white">
+      <section className="relative bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <h2 className="text-xl font-semibold text-slate-900">Pourquoi utiliser Skillogs ?</h2>
           <div className="mt-8 grid gap-6 lg:grid-cols-2">
             {usageCards.map((card) => (
-              <div key={card.title} className="rounded-2xl border border-slate-200 bg-white p-6">
+              <div key={card.title} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6">
                 <div className="flex items-start gap-4">
                   <span className="inline-flex h-12 w-12 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-600">
                     <FontAwesomeIcon className="h-5 w-5" icon={card.icon} />
@@ -347,7 +347,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-[#f7f7f9]">
+      <section className="relative bg-[#f7f7f9] reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
@@ -356,16 +356,16 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold text-slate-900">Ils nous font confiance</h2>
           </div>
           <div className="mt-8 grid gap-6 lg:grid-cols-[1.1fr_1fr]">
-            <div className={`rounded-2xl p-6 ${trustCards[0].tone}`}>
+            <div className={`hover-lift hover-tint rounded-2xl p-6 ${trustCards[0].tone}`}>
               <h3 className="text-base font-semibold text-slate-900">Une structure solide</h3>
               <p className="mt-3 whitespace-pre-line text-sm text-slate-600">{trustCards[0].text}</p>
             </div>
             <div className="space-y-4">
-              <div className={`rounded-2xl p-6 ${trustCards[1].tone}`}>
+              <div className={`hover-lift hover-tint rounded-2xl p-6 ${trustCards[1].tone}`}>
                 <h3 className="text-base font-semibold">Une plateforme au coeur de l'expertise pedagogique</h3>
                 <p className="mt-2 text-sm text-white/80">{trustCards[1].text}</p>
               </div>
-              <div className={`rounded-2xl p-6 ${trustCards[2].tone}`}>
+              <div className={`hover-lift hover-tint rounded-2xl p-6 ${trustCards[2].tone}`}>
                 <h3 className="text-base font-semibold">Un eco-systeme complet</h3>
                 <p className="mt-2 text-sm">{trustCards[2].text}</p>
               </div>
@@ -381,7 +381,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-white">
+      <section className="relative bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
@@ -398,7 +398,7 @@ export default function HomePage() {
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-3">
             {impacts.slice(0, 3).map((item) => (
-              <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6">
+              <div key={item.title} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6">
                 <span className={`inline-flex h-10 w-10 items-center justify-center rounded-full text-sm font-semibold ${item.accent}`}>
                   {item.id}
                 </span>
@@ -420,7 +420,7 @@ export default function HomePage() {
           </div>
           <div className="mt-6 grid gap-6 lg:grid-cols-3">
             {impacts.slice(3).map((item) => (
-              <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6">
+              <div key={item.title} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6">
                 <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-100 text-sm font-semibold text-indigo-600">
                   {item.id}
                 </span>
@@ -438,7 +438,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-[#f7f7f9]">
+      <section className="relative bg-[#f7f7f9] reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
@@ -447,7 +447,7 @@ export default function HomePage() {
             <h2 className="text-2xl font-semibold text-slate-900">Ils en parlent mieux que nous !</h2>
           </div>
           <div className="mt-10 grid gap-6 lg:grid-cols-[1.1fr_1fr]">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6">
+            <div className="hover-lift rounded-2xl border border-slate-200 bg-white p-6">
               <div className="flex items-start gap-4">
                 <Image
                     className="rounded-2xl bg-[#b7ff63] p-2"
@@ -465,12 +465,12 @@ export default function HomePage() {
                 <p className="font-semibold text-slate-900">{testimonials[0].text}</p>
                 <p className="mt-3">{testimonials[0].body}</p>
               </div>
-              <button className="mt-6 inline-flex items-center gap-2 rounded-full border border-indigo-600 px-4 py-2 text-sm font-semibold text-indigo-600">
+              <button className="hover-button mt-6 inline-flex items-center gap-2 rounded-full border border-indigo-600 px-4 py-2 text-sm font-semibold text-indigo-600">
                 <FontAwesomeIcon className="h-3.5 w-3.5" icon={faPlay} />
                 Voir le temoignage video
               </button>
             </div>
-            <div className="rounded-2xl bg-[#4f46e5] p-6 text-white">
+            <div className="hover-lift hover-tint rounded-2xl bg-[#4f46e5] p-6 text-white">
               <h3 className="text-lg font-semibold">Un accompagnement pense pour les formateurs</h3>
               <p className="mt-3 text-sm text-white/85">
                 Skillogs s'adapte aux pratiques des formateurs, pas l'inverse. A travers des
@@ -492,7 +492,7 @@ export default function HomePage() {
           </div>
           <div className="mt-8 grid gap-6 md:grid-cols-3">
             {testimonials.slice(1).map((item) => (
-              <div key={item.name} className="rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-600">
+              <div key={item.name} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-600">
                 <p>{item.text}</p>
                 <p className="mt-4 text-sm font-semibold text-indigo-600">{item.name}</p>
               </div>
@@ -501,7 +501,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-white">
+      <section className="relative bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
@@ -523,10 +523,10 @@ export default function HomePage() {
                     key={item.label}
                     className={
                       index === 1
-                        ? 'flex h-28 flex-col items-center justify-center rounded-2xl bg-[#b7ff63] p-5 text-center text-sm font-semibold text-[#2f2f2f]'
+                        ? 'hover-lift hover-tint flex h-28 flex-col items-center justify-center rounded-2xl bg-[#b7ff63] p-5 text-center text-sm font-semibold text-[#2f2f2f]'
                         : index === 0
-                          ? 'flex h-28 flex-col items-center justify-center rounded-2xl bg-[#4f46e5] p-5 text-center text-sm font-semibold text-white'
-                          : 'flex h-28 flex-col items-center justify-center rounded-2xl bg-[#b9c3ff] p-5 text-center text-sm font-semibold text-[#2f2f2f]'
+                          ? 'hover-lift hover-tint flex h-28 flex-col items-center justify-center rounded-2xl bg-[#4f46e5] p-5 text-center text-sm font-semibold text-white'
+                          : 'hover-lift hover-tint flex h-28 flex-col items-center justify-center rounded-2xl bg-[#b9c3ff] p-5 text-center text-sm font-semibold text-[#2f2f2f]'
                     }
                   >
                     <FontAwesomeIcon className="h-5 w-5" icon={item.icon} />
@@ -534,7 +534,7 @@ export default function HomePage() {
                   </div>
                 ))}
               </div>
-              <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
+              <div className="hover-lift mt-6 rounded-2xl border border-slate-200 bg-white p-4 text-sm text-slate-600">
                 <div className="flex flex-wrap gap-3">
                   {[
                     { label: 'VIDEO', icon: faVideo },
@@ -550,7 +550,7 @@ export default function HomePage() {
                   ))}
                 </div>
               </div>
-              <div className="mt-6 rounded-2xl bg-[#f5f5f7] p-5 text-sm text-slate-700">
+              <div className="hover-lift mt-6 rounded-2xl bg-[#f5f5f7] p-5 text-sm text-slate-700">
                 <div className="flex items-start gap-4">
                   <div className="space-y-4">
                     {['Integration de modalites pedagogiques interactives', 'Quiz intermediaires dans les seances', 'Accessibilite accrue avec les sous-titres'].map(
@@ -566,7 +566,7 @@ export default function HomePage() {
                   </div>
                 </div>
               </div>
-              <div className="mt-6 rounded-2xl bg-[#b7ff63] p-5 text-sm font-semibold text-[#2f2f2f]">
+              <div className="hover-lift hover-tint mt-6 rounded-2xl bg-[#b7ff63] p-5 text-sm font-semibold text-[#2f2f2f]">
                 Modele d'hybridation recommande :<div className="mt-2 text-base">1 jour par semaine d'e-learning</div>
               </div>
             </div>
@@ -577,7 +577,7 @@ export default function HomePage() {
                 { title: 'Cybersecurite - Metiers du digital', progress: '78%', hours: '35h', bar: 'bg-indigo-400' },
                 { title: 'Droits et devoirs des apprentis', progress: 'En cours de conception', hours: '3h', bar: 'bg-indigo-200' },
               ].map((item) => (
-                <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-5">
+                <div key={item.title} className="hover-lift rounded-2xl border border-slate-200 bg-white p-5">
                   <div className="flex items-center justify-between">
                     <p className="text-sm font-semibold text-slate-900">{item.title}</p>
                     <span className="rounded-full bg-indigo-100 px-3 py-1 text-xs text-indigo-600">{item.hours}</span>
@@ -593,7 +593,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-[#f7f7f9]">
+      <section className="relative bg-[#f7f7f9] reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
@@ -609,7 +609,7 @@ export default function HomePage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-4">
             {catalogueStats.map((item) => (
-              <div key={item.label} className={`rounded-2xl px-6 py-4 ${item.tone}`}>
+              <div key={item.label} className={`hover-lift hover-tint rounded-2xl px-6 py-4 ${item.tone}`}>
                 <p className="text-2xl font-semibold">{item.value}</p>
                 <p className="text-xs">{item.label}</p>
               </div>
@@ -645,8 +645,8 @@ export default function HomePage() {
                 <button
                   className={
                     index === 1
-                      ? 'mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-lime-400 px-4 py-2 text-sm font-semibold text-lime-600'
-                      : 'mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-indigo-600 px-4 py-2 text-sm font-semibold text-indigo-600'
+                      ? 'hover-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-lime-400 px-4 py-2 text-sm font-semibold text-lime-600'
+                      : 'hover-button mt-6 inline-flex w-full items-center justify-center gap-2 rounded-full border border-indigo-600 px-4 py-2 text-sm font-semibold text-indigo-600'
                   }
                 >
                   {list.action}
@@ -661,7 +661,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-white">
+      <section className="relative bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="flex items-center gap-3">
             <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
@@ -695,7 +695,7 @@ export default function HomePage() {
                 phone: '07 65 69 22 75',
               },
             ].map((item) => (
-              <div key={item.name} className="rounded-2xl border border-slate-200 bg-white p-6">
+              <div key={item.name} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6">
                 <div className="flex items-start gap-4">
                   <Image
                     className="rounded-2xl bg-[#b8c3ff] p-2"
@@ -732,18 +732,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      <section className="relative bg-[#4f46e5]">
+      <section className="relative bg-[#4f46e5] reveal">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-16 text-center text-white">
           <h2 className="text-2xl font-semibold">Pret a transformer votre pedagogie ?</h2>
           <p className="mt-2 text-sm text-white/70">
             Rejoignez les +3500 utilisateurs qui font confiance a Skillogs.
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
-            <button className="inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-[#4f46e5]">
+            <button className="hover-button inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-[#4f46e5]">
               Demander une demo
               <FontAwesomeIcon className="h-3.5 w-3.5" icon={faArrowRight} />
             </button>
-            <button className="inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm font-semibold text-white">
+            <button className="hover-button inline-flex items-center gap-2 rounded-full border border-white/60 px-5 py-2 text-sm font-semibold text-white">
               <FontAwesomeIcon className="h-4 w-4" icon={faBook} />
               Voir le catalogue
             </button>

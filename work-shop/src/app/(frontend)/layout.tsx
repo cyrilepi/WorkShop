@@ -8,6 +8,7 @@ import React from 'react'
 import { AdminBar } from '@/components/AdminBar'
 import { SkillogsFooter } from '@/components/Skillogs/SkillogsFooter'
 import { SkillogsHeader } from '@/components/Skillogs/SkillogsHeader'
+import { ScrollReveal } from '@/components/Skillogs/ScrollReveal'
 import { Providers } from '@/providers'
 import { InitTheme } from '@/providers/Theme/InitTheme'
 import { mergeOpenGraph } from '@/utilities/mergeOpenGraph'
@@ -28,6 +29,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       </head>
       <body>
         <Providers>
+          <ScrollReveal />
           <AdminBar
             adminBarProps={{
               preview: isEnabled,

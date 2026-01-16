@@ -1,3 +1,24 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import {
+  faBullseye,
+  faComments,
+  faUserGroup,
+  faEnvelope,
+  faImage,
+  faBookOpen,
+  faCirclePlay,
+  faCheck,
+  faRocket,
+  faCalendarDays,
+  faChartColumn,
+  faLightbulb,
+  faChartSimple,
+  faFileLines,
+  faPhone,
+  faVideo,
+  faPlay,
+} from '@fortawesome/free-solid-svg-icons'
+
 const timeline = [
   {
     year: '2017',
@@ -25,14 +46,17 @@ const onboardingCards = [
   {
     title: 'Prise en main guidee',
     text: 'Accompagnement personnalise avec votre referent Skillogs dedie',
+    icon: faUserGroup,
   },
   {
     title: 'Definition des parcours',
     text: 'Creation des premiers parcours en lien avec vos formations',
+    icon: faBullseye,
   },
   {
     title: 'Reponses personnalisees',
     text: 'Support pedagogique et organisationnel sur-mesure',
+    icon: faComments,
   },
 ]
 
@@ -40,18 +64,22 @@ const kitCards = [
   {
     title: 'Modeles de mails',
     text: "Templates d'annonce et d'explication prets a envoyer",
+    icon: faEnvelope,
   },
   {
     title: 'Supports visuels',
     text: 'Flyers, brochures et affiches personnalisables',
+    icon: faImage,
   },
   {
     title: 'Mini-guides pratiques',
     text: "Fiches pour faciliter l'appropriation par les equipes",
+    icon: faBookOpen,
   },
   {
     title: 'Modules en ligne',
     text: 'Formation pour rassurer et embarquer les formateurs',
+    icon: faCirclePlay,
   },
 ]
 
@@ -65,14 +93,17 @@ const assistanceItems = [
   {
     title: 'Ateliers de formation',
     text: "Sessions regulieres sur l'utilisation de Skillogs",
+    icon: faCalendarDays,
   },
   {
     title: 'Analyse des retours',
     text: 'Etude des feedbacks apprenants pour ameliorer',
+    icon: faChartColumn,
   },
   {
     title: 'Modules sur mesure',
     text: 'Conception de contenus pedagogiques personnalises',
+    icon: faLightbulb,
   },
 ]
 
@@ -94,18 +125,22 @@ const assistanceCards = [
   {
     title: 'Base documentaire',
     text: 'Docs, videos tutoriels et FAQ complete',
+    icon: faFileLines,
   },
   {
     title: 'Support telephonique',
     text: 'Assistance humaine reactive par telephone',
+    icon: faPhone,
   },
   {
     title: 'Support email',
     text: 'Reponses rapides a toutes vos questions',
+    icon: faEnvelope,
   },
   {
     title: 'Visioconference',
     text: 'Sessions en visio si necessaire',
+    icon: faVideo,
   },
 ]
 
@@ -132,7 +167,7 @@ function BulletIcon() {
 export default function AccompagnementPage() {
   return (
     <main className="bg-white text-slate-900">
-      <section className="bg-[#4f46e5]">
+      <section className="bg-[#4f46e5] reveal">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-16 text-center text-white md:py-20">
           <h1 className="text-3xl font-semibold md:text-4xl">Notre accompagnement</h1>
           <p className="mt-3 text-sm text-white/80 md:text-base">
@@ -141,7 +176,7 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f9]">
+      <section className="bg-[#f7f7f9] reveal">
         <div className="mx-auto flex w-full max-w-4xl flex-col items-center px-6 py-16 text-center">
           <span className="rounded-full bg-lime-100 px-4 py-2 text-xs font-semibold text-lime-600">
             Depuis 2017
@@ -155,7 +190,7 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <h2 className="text-center text-lg font-semibold text-slate-800">Notre parcours</h2>
           <div className="relative mt-10 grid gap-10 text-center md:grid-cols-4">
@@ -175,7 +210,7 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
-      <section className="bg-[#4f46e5]">
+      <section className="bg-[#4f46e5] reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16 text-center text-white">
           <p className="text-xs font-semibold text-lime-200">01</p>
           <h2 className="mt-3 text-2xl font-semibold">Onboarding : poser les bases ensemble</h2>
@@ -183,9 +218,11 @@ export default function AccompagnementPage() {
             {onboardingCards.map((card) => (
               <div
                 key={card.title}
-                className="flex flex-col items-center rounded-2xl bg-[#6251f0] p-6 text-white/90"
+                className="hover-lift hover-tint flex flex-col items-center rounded-2xl bg-[#6251f0] p-6 text-white/90"
               >
-                <IconPlaceholder variant="lime" />
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-[#b7ff63] text-[#2f2f2f]">
+                  <FontAwesomeIcon className="h-4 w-4" icon={card.icon} />
+                </div>
                 <h3 className="mt-4 text-center text-base font-semibold text-white">{card.title}</h3>
                 <p className="mt-2 w-full text-sm text-white/80" style={{ textAlign: 'center' }}>
                   {card.text}
@@ -196,7 +233,7 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16 text-center">
           <p className="text-xs font-semibold text-indigo-600">02</p>
           <h2 className="mt-3 text-2xl font-semibold text-slate-900">
@@ -207,8 +244,10 @@ export default function AccompagnementPage() {
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {kitCards.map((card) => (
-              <div key={card.title} className="rounded-2xl border border-slate-200 bg-white p-6 text-left">
-                <IconPlaceholder />
+              <div key={card.title} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6 text-left">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-600">
+                  <FontAwesomeIcon className="h-5 w-5" icon={card.icon} />
+                </div>
                 <h3 className="mt-4 text-base font-semibold text-slate-900">{card.title}</h3>
                 <p className="mt-2 text-sm text-slate-500">{card.text}</p>
               </div>
@@ -217,7 +256,7 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f9]">
+      <section className="bg-[#f7f7f9] reveal">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1.1fr_1fr]">
           <div>
             <p className="text-xs font-semibold text-indigo-600">03</p>
@@ -227,15 +266,19 @@ export default function AccompagnementPage() {
             <div className="mt-6 space-y-4 text-sm text-slate-600">
               {appuiPoints.map((point) => (
                 <div key={point} className="flex items-start gap-3">
-                  <BulletIcon />
+                  <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full border border-lime-300 text-[10px] text-lime-500">
+                    <FontAwesomeIcon className="h-2.5 w-2.5" icon={faCheck} />
+                  </span>
                   <span>{point}</span>
                 </div>
               ))}
             </div>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-md">
-            <div className="flex items-center gap-3">
-              <IconPlaceholder />
+          <div className="hover-lift mx-auto max-w-md rounded-2xl border border-slate-200 bg-white p-6 shadow-md">
+              <div className="flex items-center gap-3">
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
+                <FontAwesomeIcon className="h-4 w-4" icon={faRocket} />
+              </div>
               <div>
                 <p className="text-sm font-semibold text-slate-900">Module d&apos;accueil</p>
                 <p className="text-xs text-slate-500">Disponible toute l&apos;annee</p>
@@ -245,46 +288,47 @@ export default function AccompagnementPage() {
               Un module de formation en ligne pour les apprenants, realisable en autonomie a tout
               moment de l&apos;annee.
             </p>
-            <div className="mt-6 flex h-24 items-center justify-center rounded-2xl border border-dashed border-indigo-200">
-              <IconPlaceholder />
-            </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16 text-center">
           <p className="text-xs font-semibold text-indigo-600">04</p>
           <h2 className="mt-3 text-2xl font-semibold text-slate-900">
             Assistance continue et newsletter hebdomadaire
           </h2>
           <div className="mt-10 grid gap-6 lg:grid-cols-2">
-            <div className="rounded-2xl border border-slate-200 bg-white p-6 text-left">
+            <div className="hover-lift rounded-2xl border border-slate-200 bg-white p-6 text-left">
               <h3 className="text-base font-semibold text-slate-900">Assistance tout au long de l&apos;annee</h3>
               <div className="mt-5 space-y-4">
-                {assistanceItems.map((item) => (
-                  <div key={item.title} className="flex items-start gap-3">
-                    <IconPlaceholder />
-                    <div>
-                      <p className="text-sm font-semibold text-slate-900">{item.title}</p>
-                      <p className="text-sm text-slate-500">{item.text}</p>
-                    </div>
+              {assistanceItems.map((item) => (
+                <div key={item.title} className="flex items-start gap-3">
+                  <div className="inline-flex h-10 w-10 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-600">
+                    <FontAwesomeIcon className="h-4 w-4" icon={item.icon} />
                   </div>
-                ))}
+                  <div>
+                    <p className="text-sm font-semibold text-slate-900">{item.title}</p>
+                    <p className="text-sm text-slate-500">{item.text}</p>
+                  </div>
+                </div>
+              ))}
               </div>
             </div>
-            <div className="rounded-2xl bg-[#4f46e5] p-6 text-left text-white">
+            <div className="hover-lift hover-tint rounded-2xl bg-[#4f46e5] p-6 text-left text-white">
               <h3 className="text-base font-semibold">Newsletter hebdomadaire</h3>
               <div className="mt-5 space-y-3 text-sm text-white/90">
                 {newsletterItems.map((item) => (
                   <div key={item} className="flex items-start gap-3">
-                    <BulletIcon />
+                    <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full border border-lime-300 text-[10px] text-lime-300">
+                      <FontAwesomeIcon className="h-2.5 w-2.5" icon={faCheck} />
+                    </span>
                     <span>{item}</span>
                   </div>
                 ))}
               </div>
               <button
-                className="mt-6 w-full rounded-full bg-lime-300 px-4 py-2 text-sm font-semibold text-[#4f46e5]"
+                className="hover-button mt-6 w-full rounded-full bg-lime-300 px-4 py-2 text-sm font-semibold text-[#4f46e5]"
                 type="button"
               >
                 S&apos;inscrire a la newsletter
@@ -294,15 +338,17 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f9]">
+      <section className="bg-[#f7f7f9] reveal">
         <div className="mx-auto w-full max-w-4xl px-6 py-16 text-center">
           <p className="text-xs font-semibold text-indigo-600">05</p>
           <h2 className="mt-3 text-2xl font-semibold text-slate-900">
             Bilan de fin d&apos;annee : capitaliser et ajuster
           </h2>
-          <div className="mt-8 rounded-2xl border border-slate-200 bg-white p-8 text-left">
+          <div className="hover-lift mt-8 rounded-2xl border border-slate-200 bg-white p-8 text-left">
             <div className="flex items-center gap-3">
-              <IconPlaceholder variant="lime" />
+              <div className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-[#b7ff63] text-[#2f2f2f]">
+                <FontAwesomeIcon className="h-4 w-4" icon={faChartSimple} />
+              </div>
               <div>
                 <p className="text-sm font-semibold text-slate-900">Entretien personnalise</p>
                 <p className="text-sm text-slate-500">Avec votre referent Skillogs dedie</p>
@@ -312,7 +358,7 @@ export default function AccompagnementPage() {
               {bilanItems.map((item) => (
                 <div key={item} className="flex items-start gap-3">
                   <span className="mt-1 inline-flex h-5 w-5 items-center justify-center rounded-full border border-indigo-200 text-[10px] text-indigo-500">
-                    O
+                    <FontAwesomeIcon className="h-2.5 w-2.5" icon={faCheck} />
                   </span>
                   <span>{item}</span>
                 </div>
@@ -322,7 +368,7 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16 text-center">
           <p className="text-xs font-semibold text-indigo-600">06</p>
           <h2 className="mt-3 text-2xl font-semibold text-slate-900">Assistance operationnelle</h2>
@@ -331,8 +377,10 @@ export default function AccompagnementPage() {
           </p>
           <div className="mt-10 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {assistanceCards.map((card) => (
-              <div key={card.title} className="rounded-2xl border border-slate-200 bg-white p-6">
-                <IconPlaceholder />
+              <div key={card.title} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-2xl bg-indigo-100 text-indigo-600">
+                  <FontAwesomeIcon className="h-5 w-5" icon={card.icon} />
+                </div>
                 <h3 className="mt-4 text-base font-semibold text-slate-900">{card.title}</h3>
                 <p className="mt-2 text-sm text-slate-500">{card.text}</p>
               </div>
@@ -341,7 +389,7 @@ export default function AccompagnementPage() {
         </div>
       </section>
 
-      <section className="bg-[#2f2f2f]">
+      <section className="bg-[#2f2f2f] reveal">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 text-white lg:grid-cols-[1fr_1.1fr]">
           <div>
             <p className="text-xs font-semibold text-lime-300">07</p>
@@ -351,24 +399,28 @@ export default function AccompagnementPage() {
               competences sur la plateforme Skillogs.
             </p>
             <button
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-lime-300 px-4 py-2 text-sm font-semibold text-[#4f46e5]"
+              className="hover-button mt-6 inline-flex items-center gap-2 rounded-full bg-lime-300 px-4 py-2 text-sm font-semibold text-[#4f46e5]"
               type="button"
             >
-              <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-900 text-[10px]">
-                O
-              </span>
+              <FontAwesomeIcon className="h-3.5 w-3.5" icon={faPlay} />
               Voir la video
             </button>
           </div>
-          <div className="flex items-center justify-center rounded-3xl bg-white/10 p-6">
-            <div className="flex h-56 w-full items-center justify-center rounded-2xl border border-white/20 bg-white/5">
-              <IconPlaceholder />
+          <div className="hover-lift flex items-center justify-center rounded-3xl bg-white/10 p-6">
+            <div className="relative h-56 w-full overflow-hidden rounded-2xl border border-white/20 bg-white/5">
+              <iframe
+                className="h-full w-full"
+                src="https://www.youtube.com/embed/ZDnlOONAad4"
+                title="Video"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+              />
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#4f46e5]">
+      <section className="bg-[#4f46e5] reveal">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-14 text-center text-white">
           <h2 className="text-2xl font-semibold">Pret a etre accompagne ?</h2>
           <p className="mt-2 text-sm text-white/70">
@@ -377,13 +429,13 @@ export default function AccompagnementPage() {
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <button
-              className="rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-[#4f46e5]"
+              className="hover-button rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-[#4f46e5]"
               type="button"
             >
               Demander une demo
             </button>
             <button
-              className="rounded-full border border-white/60 px-5 py-2 text-sm font-semibold text-white"
+              className="hover-button rounded-full border border-white/60 px-5 py-2 text-sm font-semibold text-white"
               type="button"
             >
               Nous contacter

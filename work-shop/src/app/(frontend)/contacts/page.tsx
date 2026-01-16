@@ -1,7 +1,10 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
+
 export default function ContactsPage() {
   return (
     <main className="bg-white text-slate-900">
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto grid w-full max-w-6xl gap-10 px-6 py-16 lg:grid-cols-[1fr_1.1fr]">
           <div className="space-y-5">
             <h1 className="text-3xl font-semibold text-slate-900 md:text-4xl">
@@ -15,7 +18,7 @@ export default function ContactsPage() {
             </p>
           </div>
 
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
+          <div className="hover-lift rounded-2xl border border-slate-200 bg-white p-6 shadow-sm">
             <h2 className="text-base font-semibold text-slate-900">
               Planifiez une demonstration produit personnalisee et posez toutes vos questions a nos
               experts
@@ -63,31 +66,27 @@ export default function ContactsPage() {
                 <textarea className="h-32 w-full rounded-md border border-slate-200 px-3 py-2" />
               </label>
               <button
-                className="inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-slate-900"
+                className="hover-button inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-slate-900"
                 type="button"
               >
                 Envoyer
-                <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-900 text-[10px]">
-                  O
-                </span>
+                <FontAwesomeIcon className="h-3.5 w-3.5" icon={faArrowRight} />
               </button>
             </form>
           </div>
         </div>
       </section>
 
-      <section className="bg-[#4f46e5]">
+      <section className="bg-[#4f46e5] reveal">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-14 text-center text-white">
           <h2 className="text-2xl font-semibold">Des questions ?</h2>
           <p className="mt-2 text-xl font-semibold">Besoin d&apos;en discuter en direct ?</p>
           <button
-            className="mt-6 inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-[#4f46e5]"
+            className="hover-button mt-6 inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-[#4f46e5]"
             type="button"
           >
             Nous contacter
-            <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-[#4f46e5] text-[10px]">
-              O
-            </span>
+            <FontAwesomeIcon className="h-3.5 w-3.5" icon={faArrowRight} />
           </button>
         </div>
       </section>

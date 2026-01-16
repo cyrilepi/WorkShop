@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faArrowRight, faCalendarDays, faClock, faTag } from '@fortawesome/free-solid-svg-icons'
+
 const filters = [
   { label: 'Tous (7)', active: true },
   { label: 'Transformation (2)' },
@@ -62,7 +65,7 @@ function IconPlaceholder() {
 export default function BlogPage() {
   return (
     <main className="bg-white text-slate-900">
-      <section className="bg-[#4f46e5]">
+      <section className="bg-[#4f46e5] reveal">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-16 text-center text-white md:py-20">
           <h1 className="text-3xl font-semibold md:text-4xl">Blog Skillogs</h1>
           <p className="mt-3 text-sm text-white/80 md:text-base">
@@ -71,7 +74,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-10">
           <div className="flex flex-wrap items-center gap-3">
             {filters.map((filter) => (
@@ -83,6 +86,9 @@ export default function BlogPage() {
                     : 'rounded-full bg-slate-100 px-4 py-2 text-xs font-semibold text-slate-600'
                 }
               >
+                <span className="mr-2 inline-flex h-3 w-3 items-center justify-center text-white/80">
+                  <FontAwesomeIcon className="h-3 w-3" icon={faTag} />
+                </span>
                 {filter.label}
               </span>
             ))}
@@ -90,7 +96,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6">
           <article className="rounded-[32px] bg-[#4f46e5] p-10 text-white">
             <span className="inline-flex rounded-full bg-white/15 px-3 py-1 text-xs font-semibold text-white">
@@ -106,22 +112,23 @@ export default function BlogPage() {
             </p>
             <div className="mt-6 flex items-center gap-6 text-xs text-white/70">
               <span className="inline-flex items-center gap-2">
-                <IconPlaceholder /> 8 janvier 2026
+                <FontAwesomeIcon className="h-3.5 w-3.5" icon={faCalendarDays} /> 8 janvier 2026
               </span>
               <span className="inline-flex items-center gap-2">
-                <IconPlaceholder /> 8 min de lecture
+                <FontAwesomeIcon className="h-3.5 w-3.5" icon={faClock} /> 8 min de lecture
               </span>
             </div>
           </article>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
             {articles.map((article) => (
-              <article key={article.title} className="rounded-2xl border border-slate-200 bg-white p-6">
-                <span className="inline-flex rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-600">
+              <article key={article.title} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6">
+                <span className="inline-flex items-center gap-2 rounded-full bg-indigo-100 px-3 py-1 text-xs font-semibold text-indigo-600">
+                  <FontAwesomeIcon className="h-3 w-3" icon={faTag} />
                   {article.tag}
                 </span>
                 <h3 className="mt-4 text-base font-semibold text-slate-900">{article.title}</h3>
@@ -129,17 +136,15 @@ export default function BlogPage() {
                 <div className="mt-6 border-t border-slate-200 pt-4 text-xs text-slate-500">
                   <div className="flex items-center justify-between">
                     <span className="inline-flex items-center gap-2">
-                      <IconPlaceholder /> {article.date}
+                      <FontAwesomeIcon className="h-3.5 w-3.5" icon={faCalendarDays} /> {article.date}
                     </span>
                     <span className="inline-flex items-center gap-2">
-                      <IconPlaceholder /> {article.time}
+                      <FontAwesomeIcon className="h-3.5 w-3.5" icon={faClock} /> {article.time}
                     </span>
                   </div>
                   <button className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-indigo-600">
                     Lire l'article
-                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-indigo-200 text-[10px]">
-                      O
-                    </span>
+                    <FontAwesomeIcon className="h-3.5 w-3.5" icon={faArrowRight} />
                   </button>
                 </div>
               </article>
@@ -148,7 +153,7 @@ export default function BlogPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 pb-16">
           <div className="rounded-[32px] bg-[#f5f5f7] px-6 py-12 text-center">
             <h3 className="text-xl font-semibold text-slate-900">Restez informe des dernieres tendances</h3>
@@ -156,15 +161,20 @@ export default function BlogPage() {
               Inscrivez-vous a notre newsletter pour recevoir nos articles, guides et actualites
               directement dans votre boite mail.
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
-              <input
-                className="h-11 w-full max-w-sm rounded-full border border-slate-200 px-4 text-sm outline-none"
-                placeholder="Votre email"
-                type="email"
-              />
-              <button className="h-11 rounded-full bg-indigo-600 px-6 text-sm font-semibold text-white">
-                S'inscrire
-              </button>
+            <div className="mt-8">
+              <div className="mx-auto flex w-full max-w-2xl flex-col items-center gap-4 sm:flex-row sm:justify-center">
+                <input
+                  type="email"
+                  placeholder="Votre email"
+                  className="w-full rounded-full border border-gray-200 bg-white px-5 py-3 text-sm text-gray-700 shadow-sm outline-none transition focus:border-indigo-500 focus:ring-2 focus:ring-indigo-200 sm:max-w-md"
+                />
+                <button
+                  type="button"
+                  className="hover-button rounded-full bg-indigo-600 px-6 py-3 text-sm font-semibold text-white shadow-md transition hover:bg-indigo-700"
+                >
+                  S'inscrire
+                </button>
+              </div>
             </div>
           </div>
         </div>

@@ -1,4 +1,6 @@
 import Link from 'next/link'
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faEnvelope, faPhone, faLocationDot } from '@fortawesome/free-solid-svg-icons'
 
 const navItems = [
   { label: 'Qui sommes-nous', href: '/qui-sommes-nous' },
@@ -11,12 +13,10 @@ const navItems = [
   { label: 'Contact', href: '/contacts' },
 ]
 
-function ContactItem({ label }: { label: string }) {
+function ContactItem({ icon, label }: { icon: typeof faEnvelope; label: string }) {
   return (
     <div className="flex items-center gap-2 text-slate-300">
-      <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-slate-600 text-[10px]">
-        O
-      </span>
+      <FontAwesomeIcon className="h-4 w-4 text-slate-400" icon={icon} />
       <span>{label}</span>
     </div>
   )
@@ -57,9 +57,9 @@ export function SkillogsFooter() {
           <div className="space-y-4">
             <div className="text-sm font-semibold text-white">Contact</div>
             <div className="flex flex-col gap-3 text-slate-300">
-              <ContactItem label="support@skillogs.com" />
-              <ContactItem label="07 65 69 22 75" />
-              <ContactItem label="101 rue de la Fontaine Grelot, 92160 Antony" />
+              <ContactItem icon={faEnvelope} label="support@skillogs.com" />
+              <ContactItem icon={faPhone} label="07 65 69 22 75" />
+              <ContactItem icon={faLocationDot} label="101 rue de la Fontaine Grelot, 92160 Antony" />
             </div>
           </div>
         </div>

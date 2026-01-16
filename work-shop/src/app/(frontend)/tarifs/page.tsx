@@ -1,3 +1,6 @@
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faCheck } from '@fortawesome/free-solid-svg-icons'
+
 const plans = [
   {
     name: 'Starter',
@@ -54,7 +57,7 @@ const plans = [
 function CheckIcon() {
   return (
     <span className="mt-0.5 inline-flex h-6 w-6 items-center justify-center rounded-full border border-indigo-200 text-xs text-indigo-500">
-      O
+      <FontAwesomeIcon className="h-3 w-3" icon={faCheck} />
     </span>
   )
 }
@@ -62,14 +65,14 @@ function CheckIcon() {
 export default function TarifsPage() {
   return (
     <main className="bg-white text-slate-900">
-      <section className="bg-[#4f46e5]">
+      <section className="bg-[#4f46e5] reveal">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-16 text-center text-white md:py-20">
           <h1 className="text-3xl font-semibold md:text-4xl">Nos tarifs</h1>
           <p className="mt-3 text-sm text-white/80 md:text-base">Des offres adaptées à chaque structure</p>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <div className="grid gap-8 lg:grid-cols-3">
             {plans.map((plan) => {
@@ -78,8 +81,8 @@ export default function TarifsPage() {
                   key={plan.name}
                   className={
                     plan.highlight
-                      ? 'relative rounded-3xl border border-indigo-500 bg-[#f5f4ff] p-8 shadow-lg'
-                      : 'rounded-3xl border border-slate-200 bg-white p-8 shadow-sm'
+                      ? 'hover-lift hover-tint relative rounded-3xl border border-indigo-500 bg-[#f5f4ff] p-8 shadow-lg'
+                      : 'hover-lift rounded-3xl border border-slate-200 bg-white p-8 shadow-sm'
                   }
                 >
                   {plan.badge ? (
@@ -108,8 +111,8 @@ export default function TarifsPage() {
                   <button
                     className={
                       plan.highlight
-                        ? 'mt-8 w-full rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700'
-                        : 'mt-8 w-full rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50'
+                        ? 'hover-button mt-8 w-full rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700'
+                        : 'hover-button mt-8 w-full rounded-full border border-slate-200 px-4 py-2 text-sm font-semibold text-slate-900 transition hover:bg-slate-50'
                     }
                     type="button"
                   >

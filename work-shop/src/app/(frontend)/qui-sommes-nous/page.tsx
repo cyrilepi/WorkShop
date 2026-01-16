@@ -35,7 +35,7 @@ const history = [
 export default function QuiSommesNousPage() {
   return (
     <main className="bg-white text-slate-900">
-      <section className="bg-[#4f46e5]">
+      <section className="bg-[#4f46e5] reveal">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-16 text-center text-white md:py-20">
           <h1 className="text-3xl font-semibold md:text-4xl">Qui sommes-nous</h1>
           <p className="mt-3 text-sm text-white/80 md:text-base">
@@ -44,7 +44,7 @@ export default function QuiSommesNousPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto flex w-full max-w-4xl px-6 py-16 text-center">
           <p className="text-base leading-relaxed text-slate-600">
             Depuis 2002, <span className="font-semibold text-indigo-600">Skillogs</span> accompagne les
@@ -55,7 +55,7 @@ export default function QuiSommesNousPage() {
         </div>
       </section>
 
-      <section className="bg-[#f4f5f7]">
+      <section className="bg-[#f4f5f7] reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16 text-center">
           <h2 className="text-lg font-semibold text-slate-900">Nos valeurs</h2>
           <div className="mt-10 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
@@ -72,7 +72,7 @@ export default function QuiSommesNousPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-4xl px-6 py-16 text-center">
           <h2 className="text-lg font-semibold text-slate-900">Notre histoire</h2>
           <div className="mt-10 space-y-10 text-left">

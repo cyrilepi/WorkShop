@@ -1,3 +1,6 @@
+import Image from 'next/image'
+import { faBullseye, faChartColumn, faCheck, faCommentDots, faShield, faUsers, faArrowRight } from '@fortawesome/free-solid-svg-icons'
+
 const methodSteps = [
   "Diagnostic de l'equipement et des usages numeriques",
   'Analyse du referentiel et des blocs de competences',
@@ -10,18 +13,22 @@ const resultCards = [
   {
     title: 'Personnalisation',
     text: 'Parcours adaptes selon les profils (decrocheurs, apprenants eloignes...)',
+    icon: faUsers,
   },
   {
     title: 'Tracabilite',
     text: 'Conformite aux obligations legales garantie',
+    icon: faShield,
   },
   {
     title: 'Implication',
     text: 'Formateurs valorises dans leur role de facilitateurs',
+    icon: faBullseye,
   },
   {
     title: 'Pilotage',
     text: "Donnees d'assiduite, d'engagement et de progression",
+    icon: faChartColumn,
   },
 ]
 
@@ -82,18 +89,13 @@ const faq = [
   },
 ]
 
-function IconCircle() {
-  return (
-    <span className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-indigo-200 bg-indigo-100 text-xs text-indigo-500">
-      O
-    </span>
-  )
-}
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faQuoteLeft } from '@fortawesome/free-solid-svg-icons'
 
 function QuoteIcon() {
   return (
     <span className="inline-flex h-9 w-9 items-center justify-center rounded-xl border border-indigo-200 bg-indigo-100 text-xs text-indigo-500">
-      O
+      <FontAwesomeIcon className="h-4 w-4" icon={faQuoteLeft} />
     </span>
   )
 }
@@ -101,7 +103,7 @@ function QuoteIcon() {
 export default function ClientsPage() {
   return (
     <main className="bg-white text-slate-900">
-      <section className="bg-[#4f46e5]">
+      <section className="bg-[#4f46e5] reveal">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-16 text-center text-white md:py-20">
           <h1 className="text-3xl font-semibold md:text-4xl">Nos clients</h1>
           <p className="mt-3 text-sm text-white/80 md:text-base">
@@ -110,7 +112,7 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 py-16">
           <span className="inline-flex rounded-full bg-indigo-100 px-4 py-2 text-xs font-semibold text-indigo-600">
             Cas client
@@ -129,7 +131,7 @@ export default function ClientsPage() {
                 logistiques, accessibilite territoriale, attentes generationnelles... et pression
                 croissante des financeurs vers des modalites hybrides.
               </p>
-              <div className="rounded-2xl border border-indigo-100 bg-[#f5f6ff] p-5">
+              <div className="hover-lift rounded-2xl border border-indigo-100 bg-[#f5f6ff] p-5">
                 <div className="flex items-start gap-3">
                   <QuoteIcon />
                   <div className="space-y-2 text-sm text-slate-700">
@@ -141,18 +143,18 @@ export default function ClientsPage() {
                 </div>
               </div>
             </div>
-            <div className="rounded-2xl border border-slate-200 bg-slate-50">
-              <div className="flex aspect-[4/3] items-center justify-center rounded-2xl">
-                <IconCircle />
+            <div className="hover-lift rounded-2xl border border-slate-200 bg-slate-50">
+              <div className="relative aspect-[4/3] w-full overflow-hidden rounded-2xl">
+                <Image alt="Session en classe" fill sizes="(max-width: 768px) 100vw, 520px" src="/images/imagedusoir1.jpg" className="object-cover" />
               </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6">
-          <div className="rounded-3xl bg-[#4f46e5] p-8 text-white md:p-10">
+          <div className="hover-lift hover-tint rounded-3xl bg-[#4f46e5] p-8 text-white md:p-10">
             <h3 className="text-lg font-semibold">
               Le defi : engager les formateurs et assurer une coherence pedagogique
             </h3>
@@ -162,7 +164,7 @@ export default function ClientsPage() {
               presentiel et distanciel, tout en co-construisant avec les formateurs des scenarios
               pedagogiques realistes.
             </p>
-            <div className="mt-6 rounded-2xl bg-white/15 p-5">
+            <div className="hover-lift mt-6 rounded-2xl bg-white/15 p-5">
               <div className="flex items-start gap-3">
                 <QuoteIcon />
                 <p className="text-sm text-white/90">
@@ -175,7 +177,7 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-4xl px-6 py-16 text-center">
           <h3 className="text-base font-semibold text-slate-900">
             La methode : une hybridation sur-mesure, modulaire et pilotee
@@ -190,7 +192,7 @@ export default function ClientsPage() {
               </div>
             ))}
           </div>
-          <div className="mt-8 rounded-2xl border border-lime-200 bg-[#f0ffe1] p-5 text-left">
+          <div className="hover-lift mt-8 rounded-2xl border border-lime-200 bg-[#f0ffe1] p-5 text-left">
             <div className="flex items-start gap-3">
               <QuoteIcon />
               <p className="text-sm text-slate-700">
@@ -202,37 +204,39 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-6xl px-6 pb-16 text-center">
           <h3 className="text-base font-semibold text-slate-900">
             Resultats : plus de flexibilite, plus d'impact, et plus de data
           </h3>
           <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
             {resultCards.map((card) => (
-              <div key={card.title} className="rounded-2xl border border-slate-200 bg-white p-6">
-                <IconCircle />
+              <div key={card.title} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6">
+                <div className="inline-flex h-11 w-11 items-center justify-center rounded-full bg-indigo-100 text-indigo-600">
+                  <FontAwesomeIcon className="h-5 w-5" icon={card.icon} />
+                </div>
                 <h4 className="mt-4 text-base font-semibold text-slate-900">{card.title}</h4>
                 <p className="mt-2 text-sm text-slate-500">{card.text}</p>
               </div>
             ))}
           </div>
-          <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-lime-200 bg-[#f0ffe1] p-5 text-sm text-slate-700">
+          <div className="hover-lift mx-auto mt-8 max-w-3xl rounded-2xl border border-lime-200 bg-[#f0ffe1] p-5 text-sm text-slate-700">
             "C'est la synergie pedagogique qui fait la difference. On combine la richesse du
             distanciel avec la force du presentiel. Et ca fonctionne."
           </div>
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-5xl px-6 pb-16">
-          <div className="rounded-3xl bg-[#2f2f2f] p-10 text-center text-white">
+          <div className="hover-lift hover-tint rounded-3xl bg-[#2f2f2f] p-10 text-center text-white">
             <h3 className="text-lg font-semibold">Pourquoi ca marche avec Skillogs ?</h3>
             <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
               {reasons.map((item) => (
-                <div key={item} className="rounded-2xl bg-white/10 px-4 py-3 text-sm">
+                <div key={item} className="hover-lift rounded-2xl bg-white/10 px-4 py-3 text-sm">
                   <div className="flex items-center gap-3">
-                    <span className="inline-flex h-6 w-6 items-center justify-center rounded-full border border-lime-300 text-xs text-lime-300">
-                      O
+                    <span className="inline-flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full border border-lime-300 text-xs text-lime-300">
+                      <FontAwesomeIcon className="h-3 w-3" icon={faCheck} />
                     </span>
                     <span>{item}</span>
                   </div>
@@ -243,7 +247,7 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      <section className="bg-[#f7f7f9]">
+      <section className="bg-[#f7f7f9] reveal">
         <div className="mx-auto w-full max-w-6xl px-6 pt-12 pb-16">
           <span className="inline-flex rounded-full bg-indigo-100 px-4 py-2 text-xs font-semibold text-indigo-600">
             Cas client
@@ -251,7 +255,7 @@ export default function ClientsPage() {
           <h3 className="mt-6 text-2xl font-semibold text-slate-900">
             Un accompagnement humain et concret pour faire bouger les lignes
           </h3>
-          <div className="mt-6 rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-600">
+          <div className="hover-lift mt-6 rounded-2xl border border-slate-200 bg-white p-6 text-sm text-slate-600">
             <p className="font-semibold text-slate-900">Contexte</p>
             <p className="mt-2">
               Un de nos clients souhaitait amorcer sa transition digitale sans resistance ni perte
@@ -265,7 +269,7 @@ export default function ClientsPage() {
           </h4>
           <div className="mt-6 grid gap-6 lg:grid-cols-3">
             {solutionCards.map((card) => (
-              <div key={card.title} className={`rounded-2xl p-6 ${card.tone}`}>
+              <div key={card.title} className={`hover-lift hover-tint rounded-2xl p-6 ${card.tone}`}>
                 <span className="inline-flex h-9 w-9 items-center justify-center rounded-full bg-white text-sm font-semibold text-slate-900">
                   {card.badge}
                 </span>
@@ -275,29 +279,31 @@ export default function ClientsPage() {
             ))}
           </div>
 
-          <div className="mx-auto mt-8 max-w-3xl rounded-2xl border border-slate-200 bg-white p-6">
+          <div className="hover-lift mx-auto mt-8 max-w-3xl rounded-2xl border border-slate-200 bg-white p-6">
             <div className="flex items-start gap-4">
-              <IconCircle />
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-indigo-600 text-white">
+                <FontAwesomeIcon className="h-4 w-4" icon={faCommentDots} />
+              </span>
               <div>
                 <p className="text-sm font-semibold text-slate-900">
                   Un accompagnement humain tout au long du projet
                 </p>
                 <div className="mt-3 space-y-2 text-sm text-slate-600">
                   <div className="flex items-start gap-3">
-                    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-lime-300 text-[10px] text-lime-500">
-                      O
+                    <span className="inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-lime-300 text-[10px] text-lime-500">
+                      <FontAwesomeIcon className="h-2.5 w-2.5" icon={faCheck} />
                     </span>
                     <span>Deux referentes internes impliquees a chaque etape</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-lime-300 text-[10px] text-lime-500">
-                      O
+                    <span className="inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-lime-300 text-[10px] text-lime-500">
+                      <FontAwesomeIcon className="h-2.5 w-2.5" icon={faCheck} />
                     </span>
                     <span>Echanges reguliers, co-construction et reajustements</span>
                   </div>
                   <div className="flex items-start gap-3">
-                    <span className="inline-flex h-5 w-5 items-center justify-center rounded-full border border-lime-300 text-[10px] text-lime-500">
-                      O
+                    <span className="inline-flex h-5 w-5 flex-shrink-0 items-center justify-center rounded-full border border-lime-300 text-[10px] text-lime-500">
+                      <FontAwesomeIcon className="h-2.5 w-2.5" icon={faCheck} />
                     </span>
                     <span>Bilan final partage avec recommandations pour la suite</span>
                   </div>
@@ -308,14 +314,14 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      <section className="bg-white">
+      <section className="bg-white reveal">
         <div className="mx-auto w-full max-w-4xl px-6 py-16 text-center">
           <h3 className="text-2xl font-semibold text-slate-900">
             FAQ - Digitaliser votre CFA ou votre OF avec Skillogs
           </h3>
           <div className="mt-10 space-y-6 text-left">
             {faq.map((item) => (
-              <div key={item.question} className="rounded-2xl border border-slate-200 bg-white p-6">
+              <div key={item.question} className="hover-lift rounded-2xl border border-slate-200 bg-white p-6">
                 <p className="text-sm font-semibold text-slate-900">
                   <span className="text-indigo-600">Q.</span> {item.question}
                 </p>
@@ -326,7 +332,7 @@ export default function ClientsPage() {
         </div>
       </section>
 
-      <section className="bg-[#4f46e5]">
+      <section className="bg-[#4f46e5] reveal">
         <div className="mx-auto flex w-full max-w-6xl flex-col items-center px-6 py-14 text-center text-white">
           <h3 className="text-2xl font-semibold">Rejoignez nos clients satisfaits</h3>
           <p className="mt-2 text-sm text-white/70">
@@ -335,13 +341,14 @@ export default function ClientsPage() {
           </p>
           <div className="mt-6 flex flex-wrap justify-center gap-4">
             <button
-              className="rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-[#4f46e5]"
+              className="hover-button inline-flex items-center gap-2 rounded-full bg-lime-300 px-5 py-2 text-sm font-semibold text-[#4f46e5]"
               type="button"
             >
               Demander une demo
+              <FontAwesomeIcon className="h-3.5 w-3.5" icon={faArrowRight} />
             </button>
             <button
-              className="rounded-full border border-white/60 px-5 py-2 text-sm font-semibold text-white"
+              className="hover-button rounded-full border border-white/60 px-5 py-2 text-sm font-semibold text-white"
               type="button"
             >
               Decouvrir notre accompagnement

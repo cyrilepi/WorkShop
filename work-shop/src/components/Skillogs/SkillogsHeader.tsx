@@ -66,7 +66,7 @@ export function SkillogsHeader() {
             Connexion
           </Link>
           <Link
-            className="whitespace-nowrap rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
+            className="hover-button whitespace-nowrap rounded-full bg-indigo-600 px-4 py-2 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
             href="/demander-une-demo"
           >
             Demander une démo
@@ -109,7 +109,7 @@ export function SkillogsHeader() {
               Connexion
             </Link>
             <Link
-              className="mt-2 rounded-full bg-indigo-600 px-4 py-2 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
+              className="hover-button mt-2 rounded-full bg-indigo-600 px-4 py-2 text-center text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700"
               href="/demander-une-demo"
             >
               Demander une démo
